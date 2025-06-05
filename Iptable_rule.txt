@@ -1,0 +1,1 @@
+sudo iptables -A INPUT -s 192.168.56.1 -p tcp --dport 22 -j DROP
