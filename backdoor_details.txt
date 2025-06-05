@@ -1,0 +1,9 @@
+Rogue Username: darklord
+Suspicious Process: remotesec (PID 951)
+Listening Port: 56565
+
+Justification:
+- The user 'darklord' was created shortly after a brute-force attack from 192.168.56.1.
+- 'remotesec' is a non-standard process listening on the high, non-standard port 56565.
+- This process is running as root and was not installed by the system administrator.
+- It is most likely a backdoor installed for persistent access.
