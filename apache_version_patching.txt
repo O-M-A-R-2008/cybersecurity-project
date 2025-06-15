@@ -1,12 +1,14 @@
-Apache Version:
-Apache/2.4.7 (Ubuntu)
+Current Apache Version:
+Apache/2.4.41 (Ubuntu)
 
-Patching Summary:
-To harden the Apache server and hide version information:
-- Edited /etc/apache2/conf-enabled/security.conf
-- Set 'ServerTokens Prod' to hide version in headers
-- Set 'ServerSignature Off' to hide version in error pages
-- Restarted Apache using 'sudo service apache2 restart'
+Configuration Changes Made:
+1. Edited the configuration file: /etc/apache2/conf-available/security.conf
+2. Set the following directives:
+   ServerTokens Prod
+   ServerSignature Off
+3. Restarted Apache using:
+   sudo service apache2 restart
 
-Verified using: curl -I http://localhost
+Verification:
+Ran `curl -I http://localhost` to confirm the version banner is no longer visible.
 
