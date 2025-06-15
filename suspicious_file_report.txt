@@ -1,0 +1,9 @@
+Suspicious File Name: ssh-one
+
+Command and Control (C2) URLs Found:
+- http://darkl0rd.com:7758/SSH-T
+- http://darkl0rd.com:7758/SSH-One
+
+Summary:
+The file "ssh-one" is a malicious Bash script that disables the system firewall, sets up persistence by modifying /etc/rc.local, and downloads two additional payloads from an external Command and Control server. The script runs in an infinite loop, ensuring both payloads are continuously executed. Despite its behavior, it was not detected by ClamAV, indicating a custom or obfuscated threat.
+
