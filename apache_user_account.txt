@@ -1,0 +1,33 @@
+1. Create a new group and user for Apache:
+
+   sudo groupadd apache-group
+   sudo useradd -r -d /var/www -s /usr/sbin/nologin -g apache-group apache-user
+
+   Explanation:
+   - -r: Create a system user
+   - -d: Set home directory to /var/www (standard for web servers)
+   - -s: Disable login shell
+   - -g: Assign to the "apache-group"
+
+2. Update Apache configuration to use the new user and group:
+
+   Edit the Apache environment file (Ubuntu-specific):
+   sudo nano /etc/apache2/envvars
+
+   Change the following lines:
+   export APACHE_RUN_USER=apache-user
+   export APACHE_RUN_GROUP=apache-group
+
+3. Set correct ownership of web files:
+
+   sudo chown -R apache-user:apache-group /var/www/html
+
+4. Restart Apache to apply changes:
+
+   sudo service apache2 restart
+
+5. Confirm Apache is running under the new user:
+
+   ps aux | grep apache2
+   # Output should show apache-user running the worker processes
+
