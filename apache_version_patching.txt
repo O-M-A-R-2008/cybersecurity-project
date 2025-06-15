@@ -1,0 +1,12 @@
+Apache Version:
+Apache/2.4.7 (Ubuntu)
+
+Patching Summary:
+To harden the Apache server and hide version information:
+- Edited /etc/apache2/conf-enabled/security.conf
+- Set 'ServerTokens Prod' to hide version in headers
+- Set 'ServerSignature Off' to hide version in error pages
+- Restarted Apache using 'sudo service apache2 restart'
+
+Verified using: curl -I http://localhost
+
